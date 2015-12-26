@@ -1,0 +1,20 @@
+sudo: false
+language: node_js
+node_js:
+  - "0.10"
+  - "0.12"
+  - "4"
+  - "node"
+
+before_install:
+  - "npm i -g codeclimate-test-reporter istanbul"
+
+addons:
+  code_climate:
+    repo_token: 060ccef41c569dfffcf84c6bf58aa76fc9d73458610afea23a348e28e44fd251
+
+script:
+  - "npm run coverage"
+
+after_script:
+  - "cat ./coverage/lcov.info | codeclimate-test-reporter"
