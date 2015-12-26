@@ -1,6 +1,6 @@
 {
   "name": "peerid",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Peer id generator (for bittorrent)",
   "main": "index.js",
   "scripts": {
