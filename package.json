@@ -4,7 +4,7 @@
   "description": "Peer id generator (for bittorrent)",
   "main": "index.js",
   "scripts": {
-    "test": "node ./node_modules/mocha/bin/mocha -r should -R spec",
+    "test": "ava test.js",
     "coverage": "istanbul cover --report lcovonly ./node_modules/mocha/bin/_mocha -- -u exports  -r should -R spec test/*"
   },
   "repository": {
@@ -24,10 +24,11 @@
   },
   "homepage": "https://github.com/reklatsmasters/peerid#readme",
   "dependencies": {
-    "hat": "0.0.3"
+    "hat": "^0.0.3",
+    "safe-buffer": "^5.0.1"
   },
   "devDependencies": {
-    "mocha": "^2.3.4",
-    "should": "^8.0.2"
+    "ava": "^0.17.0",
+    "buffer-equals": "^1.0.4"
   }
 }
