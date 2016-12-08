@@ -1,12 +1,37 @@
-var hat = require('hat');
+var hat = require('hat')
+var Buffer = require('safe-buffer').Buffer
+
+var SIZE_BYTES = 20
+
+module.exports = peerid
 
 /**
- * @param {string} prefix optional - prefix for peer id
+ * generate peer id / node id
+ * @param {[string|buffer]} prefix - prefix for peer id
  * @return {Buffer}
  */
-module.exports = function peerid(prefix) {
-  return prefix ?
-    Buffer.concat([new Buffer(prefix, 'binary'), new Buffer(hat(160), 'hex')], 20) :
-    new Buffer(hat(160), 'hex')
-    ;
+function peerid(prefix) {
+  return is_str(prefix) ?
+         concat(Buffer.from(prefix), random_hash()) :
+          is_buf(prefix) ?
+          concat(prefix, random_hash()) :
+          random_hash()
+}
+
+function random_hash() {
+  return Buffer.from(hat(160), 'hex')
+}
+
+function is_str(s) {
+  return typeof s === 'string'
+}
+
+function is_buf(b) {
+  return Buffer.isBuffer(b)
+}
+
+function concat() {
+  var args = [].slice.call(arguments)
+
+  return Buffer.concat(args, SIZE_BYTES)
 }
