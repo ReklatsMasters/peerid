@@ -6,23 +6,24 @@
 [![Code Climate](https://codeclimate.com/github/ReklatsMasters/peerid/badges/gpa.svg)](https://codeclimate.com/github/ReklatsMasters/peerid)
 [![Test Coverage](https://codeclimate.com/github/ReklatsMasters/peerid/badges/coverage.svg)](https://codeclimate.com/github/ReklatsMasters/peerid/coverage)
 
-> Generate peer id for bittorrent dht node
+Generate peer id / node id for dht / bt node
 
 ### Usage
 
 ```js
-var BtClient = require('bittorrent-tracker');
-var peerid = require('peerid');
+const BtClient = require('bittorrent-tracker')
+const peerid = require('peerid')
 
-var client = new BtClient(peerid(), 6881 /*, torrent file */);
+const client = new BtClient(peerid(), 6881 /*, torrent file */)
 // do some ...
+
+prefix('-UT1800-')  // with prefix
 ```
 
 ### API
-* `peerid(prefix)`
 
-##### @param {string} prefix optional
-Prefix for generated peer id
+##### `peerid([prefix: String|Buffer]): Buffer`
+Generate random peer id / node id
 
 ### License
-MIT, 2015 (c) Dmitry Tsvettsikh
+MIT, © Dmitry Tsvettsikh
