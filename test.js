@@ -3,6 +3,7 @@
 import test from 'ava'
 import peerid from './'
 import equals from 'buffer-equals'
+import {Buffer} from 'safe-buffer'
 
 test('random id', t => {
   const id = peerid()
