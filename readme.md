@@ -16,7 +16,7 @@ const peerid = require('peerid')
 const client = new BtClient(peerid(), 6881 /*, torrent file */)
 // do some ...
 
-prefix('-UT1800-')  // with prefix
+peerid('-UT1800-')  // with prefix
 ```
 
 ### API
