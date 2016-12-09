@@ -4,8 +4,7 @@
   "description": "Peer id generator (for bittorrent)",
   "main": "index.js",
   "scripts": {
-    "test": "ava test.js",
-    "coverage": "istanbul cover --report lcovonly ./node_modules/mocha/bin/_mocha -- -u exports  -r should -R spec test/*"
+    "test": "ava test.js"
   },
   "repository": {
     "type": "git",
